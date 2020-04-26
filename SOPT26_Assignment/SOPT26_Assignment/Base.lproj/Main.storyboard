@@ -296,6 +296,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="sRE-lv-FC1"/>
                     </view>
+                    <navigationItem key="navigationItem" id="mrV-Gc-uil"/>
                     <connections>
                         <outlet property="loginedIDTextField" destination="P7v-sB-vWz" id="8HH-Sv-DPs"/>
                         <outlet property="loginedPWTextField" destination="8qK-VA-AEC" id="qJ4-rk-Uvl"/>

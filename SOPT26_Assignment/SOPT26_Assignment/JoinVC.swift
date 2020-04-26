@@ -13,10 +13,10 @@ class JoinVC: UIViewController {
     @IBOutlet weak var joinedIDTextField: UITextField!
     @IBOutlet weak var joinedPWTextField: UITextField!
     
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
     }
     
@@ -31,5 +31,5 @@ class JoinVC: UIViewController {
             self.navigationController?.popToRootViewController(animated: true)
         })
     }
-
+    
 }

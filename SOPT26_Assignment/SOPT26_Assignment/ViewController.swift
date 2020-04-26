@@ -35,6 +35,18 @@ class ViewController: UIViewController {
         
         self.navigationController?.pushViewController(dvc, animated: true)
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        switch segue.identifier {
+        case "login":
+            guard let dvc = segue.destination as? LoginVC else {
+                return
+            }
+            
+        default:
+            <#code#>
+        }
+    }
 
 }
 
