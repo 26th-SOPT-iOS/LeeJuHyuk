@@ -9,3 +9,6 @@
 
 
 [1차과제-Login 화면 구현](https://github.com/26th-SOPT-iOS/LeeJuHyuk/blob/master/markdown/1st_assignment-Login-View.md)
+
+
+[2차과제-Calculator](https://github.com/26th-SOPT-iOS/LeeJuHyuk/blob/master/markdown/2nd-assignment-Calculator.md)
