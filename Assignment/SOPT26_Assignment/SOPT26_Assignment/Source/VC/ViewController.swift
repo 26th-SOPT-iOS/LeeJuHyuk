@@ -31,21 +31,13 @@ class ViewController: UIViewController {
     }
     
     @IBAction func touchupJoinButton(_ sender: UIButton){
-        let dvc = self.storyboard?.instantiateViewController(identifier: "JoinVC") as! JoinVC
-        
-        self.navigationController?.pushViewController(dvc, animated: true)
+//        let dvc = self.storyboard?.instantiateViewController(identifier: "JoinVC") as! JoinVC
+//        
+//        self.navigationController?.pushViewController(dvc, animated: true)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        switch segue.identifier {
-        case "login":
-            guard let dvc = segue.destination as? LoginVC else {
-                return
-            }
-            
-        default:
-            <#code#>
-        }
+
     }
 
 }
