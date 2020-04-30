@@ -32,6 +32,7 @@ class SignUpVC: UIViewController {
     func setLayout(){
         setTextFieldLayout()
         setLabel()
+        setButton()
     }
     func setLabel(){
         self.signUpLabel.textColor = UIColor.royal
@@ -48,6 +49,26 @@ class SignUpVC: UIViewController {
         self.passwordBackground.layer.cornerRadius = 22.0
         self.passwordBackground.layer.masksToBounds = true
         self.passwordBackground.backgroundColor = UIColor.veryLightPink
+    }
+    
+    func setButton(){
+        self.signUpButton.layer.cornerRadius = 24.0
+        self.signUpButton.layer.masksToBounds = true
+        self.signUpButton.backgroundColor = UIColor.royal
+    }
+    
+    @IBAction func touchUpDismissButton(_ sender: UIButton){
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    @IBAction func signUpButton(_ sender: UIButton){
+        let storyboard = UIStoryboard.init(name: "Home", bundle: nil)
+        
+        if let dvc = storyboard.instantiateViewController(identifier: "HomeVC") as? HomeVC {
+            self.present(dvc, animated: true, completion: {
+                self.navigationController?.popToRootViewController(animated: false)
+            })
+        }
     }
     
     
