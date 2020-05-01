@@ -13,13 +13,11 @@
 
 점점 프로젝트가 커질수록 뷰컨도 많아지고 스토리보드도 많아질 것이다.. 그 외 필요한 모델이나 클래스 정의가 필요한데 프로젝트 아래에 계속 파일을 만들다 보면 나중에 찾아보기가 매우매우 힘들다..!
 
-<figure align=center>
+<p align="center">
     <img src="./asset/foldering-example.png" width=200 >
     <br/>
-    <figcaption>
-        실제 앱잼에서 만든 파일...
-    </figcaption>
-</figure>
+    실제 앱젬때 파일
+</p>
 
 따라서 폴더링이 매우 중요한데 이를 위해 간단한 폴더링 예를 한번 적어보았다.
 
@@ -52,14 +50,13 @@ Xcode에서는 따로 설정하지 않는 이상 Main 스토리보드로 시작�
 보통 앱에대한 설정은 Info.plist에서 많이 설정할 수 있다. 이 많은 설정에서 딱 두개만 바꿔주면 된다.
 
 <p>
-    <img src="./asset/change-start-storyboard1.png" width=340>
-    <img src="./asset/change-start-storyboard2.png" width=340>
+    <img src="./asset/change-start-storyboard1.png" width=500>
+    <img src="./asset/change-start-storyboard2.png" width=500>
 </p>
 
 Info.plist에서
 
 - Main storyboard file base name
-
 - Application Scene Manifest
   - Scene Configuration
     - Application Session Role
@@ -88,7 +85,7 @@ if let dvc = sb.instantiateViewController(identifier: "SignUpVC") as? SignUpVC {
 
 ## 4. Color Extension 활용하기
 
-과제를 하면서 Zeplin안에 있는 색을 맞추기위해 열심히 rgb 값을 프로젝트 인스펙터 빌더 창에서 입력하거나. 또는 코드로 색갈을 지정해주어야 한다.
+과제를 하면서 Zeplin안에 있는 색을 맞추기위해 열심히 rgb 값을 프로젝트 인스펙터 빌더 창에서 입력하거나. 또는 코드로 색을 지정해주어야 한다.
 
 그래서 이 귀찮음을 해결하기위해 Zeplin에서는 이 색상 코드값을 바로바로 생성해 적용시킬 수 있는 방법을 제시한다. 바로 Zeplin에 Styleguide라는 탭이다.
 
@@ -121,6 +118,77 @@ self.signUpLabel.addGestureRecognizer(tapGesture)
 
 ## 6. Navigation Bar 없애기
 
+네비게이션 컨트롤러를 뷰컨에 임베드 시키면, 자동으로 네비게이션 바가 생긴다. 근데 이 네비게이션 바를 사용하고 싶지 않을 때는 스토리 보드 상에서 없애줄 수 있다.
+
+<p align=center>
+    <img src="./asset/hide-navibar-example.png" width=300>
+</p>
+
 ## 7. 도전과제
 
-6,7번은 자고 일어나서 ,...
+도전과제를 위해 뷰 계층을 다음과 같이 나누었다.
+
+- 전체 뷰
+  - 스크롤뷰
+  - 상단 이미지를 위한 뷰
+
+먼저 이렇게 나눈 이유는 스크롤 뷰 안에 이미지가 있으면 이미지의 크기를 줄이고 늘릴때 스크롤뷰의 크기도 변하기 때문이고 상단에 고정시켜야 하기 때문에 외부에 배치해 두고 최상위 슈퍼 뷰와 오토를 잡아두었다.
+
+- 프로퍼티 선언
+
+```swift
+@IBOutlet var topViewHeightConstraint: NSLayoutConstraint!
+// 상단 이미지의 Height Constraint
+@IBOutlet var scrollView: UIScrollView!
+// 우리가 사용할 스크롤뷰
+
+var topViewInitialHeightConstraintConstant: CGFloat!
+// 초기 상단 이미지의 크기를 저장할 변수
+```
+
+- viewDidload
+
+```swift
+self.scrollView.delegate = self
+self.topViewInitialHeightConstraintConstant = self.topViewHeightConstraint.constant
+```
+
+여기서 delegate가 나오는데 delegate는 UIKit에서 사용자 인터렉션을 커스텀할 때 많이 쓰이는 개념이니 꼭 알아두는 것이 좋다.
+
+간단히 설명하면 이제 해당하는 컴포넌트의 동작을 '위임한다' 라고 볼 수 있는데 그냥 얘가 할 동작중에 제어 싶은 동작을 마음대로 바꿀 수 있도록 해둔 것이다.
+
+아무튼 이 스크롤뷰의 동작을 제어하기 위해 self.scrollView.delegate = self 라고 주면 된다. 이 Delegate를 지정해주기위해서는 UIScrollViewDelegate 프로토콜을 미리 지정해 두어야 한다.
+
+그리고 상단 이미지의 초기 높이를 저장해 둔다.
+
+- UISCrollViewDelegate
+
+이제 원하는 scrollView 의 동작을 제어하기위해 스크롤뷰 delegate안에 있는 scrollViewDidScroll 함수를 커스텀해 주었다.
+
+자세한 동작 내역은 [여기에](https://github.com/iOS-SOPT-iNNovation/Juhyeoklee/blob/master/8차%20스터디%20과제.md) ..
+
+```swift
+extension HomeVC: UIScrollViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let stretchedHeight = -scrollView.contentOffset.y
+
+        if stretchedHeight + self.topViewInitialHeightConstraintConstant > 88 {
+                self.topViewHeightConstraint.constant = self.topViewInitialHeightConstraintConstant + stretchedHeight
+
+        }
+        else {
+            self.topViewHeightConstraint.constant = 88
+        }
+    }
+}
+```
+
+먼저 scrollView의 contentOffset(스크롤뷰에서 보여지는 현재 위치의 y좌표의 -를 붙힌다.
+스크롤뷰 최상위에서 드래그를 하면 contentOffset의 y 좌표는 - 값이 나오기 때문에 원하는 만큼 상단이미지의 높이를 늘리고 줄이기 위해서 contentOffset의 부호만을 바꾸어 주었고 이 값을 초기 상단 이미지의 높이 값과 더해준 값을 상단 이미지뷰의 높이로 지정했다.
+
+또, 아래로 내렸을 때 최소 높이가 존재하기 때문에 그 이하로 줄어 들시에는 최소높이로 지정했다.
+최소 높이는 [여기에](https://kapeli.com/cheat_sheets/iOS_Design.docset/Contents/Resources/Documents/index) 있는 iPhone 6.1인치 모델의 Navigation bar height 의 값을 따랐다.
+
+<p align=center>
+    <img src="https://media.giphy.com/media/lqAnVMmqPJZHrbOJp6/giphy.gif">
+</p>
