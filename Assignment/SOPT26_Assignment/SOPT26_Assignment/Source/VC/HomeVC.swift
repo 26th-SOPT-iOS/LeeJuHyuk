@@ -12,8 +12,9 @@ class HomeVC: UIViewController {
 
     @IBOutlet var topViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet var scrollView: UIScrollView!
-    
+ 
     var topViewInitialHeightConstraintConstant: CGFloat!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
