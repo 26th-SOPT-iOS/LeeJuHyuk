@@ -1,4 +1,4 @@
-# 4차 과제 - 친구 리스트
+# 3차 과제 - 친구 리스트
 
 ## 목차
 
@@ -259,3 +259,5 @@ func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRow
 ```
 
 내가 해준건 이제 섹션 1에서만 지우기 이벤트를 할 수 있도록 해주고, 데이터가 변경됨에 따라 `self.tableView.reload()`를 호출해서 테이블뷰가 현제 데이터에 맞게 갱신하도록 하였다.
+
+![](https://media.giphy.com/media/ZacMr6o17GFjSHtodO/giphy.gif)
