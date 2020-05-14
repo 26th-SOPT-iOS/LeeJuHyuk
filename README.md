@@ -14,3 +14,7 @@
 - [2차과제-Calculator](https://github.com/26th-SOPT-iOS/LeeJuHyuk/blob/master/markdown/2nd-assignment-Calculator.md) 
 
 - [2차과제-Login+도전과재](https://github.com/26th-SOPT-iOS/LeeJuHyuk/blob/master/markdown/2nd-assignment-LoginView.md)
+
+
+## 3차 과제
+- [3차과제 - 친구 리스트](https://github.com/26th-SOPT-iOS/LeeJuHyuk/blob/master/markdown/3nd-assignment-Friend_List.md)
