@@ -64,11 +64,11 @@ class LoginVC: UIViewController {
         
     // MARK:- IBAction Method
     @IBAction func touchUpLoginButton(_ sender: UIButton){
-        let storyboard = UIStoryboard.init(name: "Home", bundle: nil)
-        if let dvc = storyboard.instantiateViewController(identifier: "HomeVC") as? HomeVC {
-            self.present(dvc, animated: true, completion: nil)
+        if let dvc = self.storyboard?.instantiateViewController(identifier: "TabBarC") as? TabBarC {
+            self.present(dvc, animated: true)
         }
     }
+    
     // MARK:- objc Method
     @objc func touchUpSignUpLabel(){
         let storyboard = UIStoryboard.init(name: "SignUp", bundle: nil)

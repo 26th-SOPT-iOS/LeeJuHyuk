@@ -16,7 +16,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" contentInsetAdjustmentBehavior="never" translatesAutoresizingMaskIntoConstraints="NO" id="G7U-mq-4ko">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="966"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QC1-XG-Nwy">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="1111"/>
@@ -383,7 +383,7 @@
                             <constraint firstItem="RIq-E7-Jhg" firstAttribute="leading" secondItem="YKj-Sb-kuo" secondAttribute="leading" id="AEZ-TP-ZeT"/>
                             <constraint firstItem="G7U-mq-4ko" firstAttribute="top" secondItem="EoA-8J-a3L" secondAttribute="top" id="BcI-8M-umv"/>
                             <constraint firstItem="G7U-mq-4ko" firstAttribute="leading" secondItem="YKj-Sb-kuo" secondAttribute="leading" id="Dmb-Qf-tK6"/>
-                            <constraint firstAttribute="bottom" secondItem="G7U-mq-4ko" secondAttribute="bottom" id="Lgk-VI-Dlb"/>
+                            <constraint firstItem="YKj-Sb-kuo" firstAttribute="bottom" secondItem="G7U-mq-4ko" secondAttribute="bottom" id="Lgk-VI-Dlb"/>
                             <constraint firstItem="RIq-E7-Jhg" firstAttribute="top" secondItem="EoA-8J-a3L" secondAttribute="top" id="ltp-D5-M3R"/>
                             <constraint firstItem="YKj-Sb-kuo" firstAttribute="trailing" secondItem="RIq-E7-Jhg" secondAttribute="trailing" id="rnz-sn-biM"/>
                             <constraint firstItem="G7U-mq-4ko" firstAttribute="trailing" secondItem="YKj-Sb-kuo" secondAttribute="trailing" id="uUU-hZ-cQB"/>

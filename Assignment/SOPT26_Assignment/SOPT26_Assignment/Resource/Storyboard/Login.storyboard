@@ -61,13 +61,12 @@
                                     <constraint firstAttribute="height" constant="106" id="SC4-bJ-JGj"/>
                                 </constraints>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XK8-zg-CFH">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XK8-zg-CFH">
                                 <rect key="frame" x="38" y="433" width="299" height="48"/>
                                 <color key="backgroundColor" red="0.0" green="0.32852089410000002" blue="0.57488495110000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="XK8-zg-CFH" secondAttribute="height" multiplier="25:4" id="Pes-Bk-7vK"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <state key="normal" title="로그인">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -80,7 +79,7 @@
                                 <attributedString key="attributedText">
                                     <fragment content="아직 회원이 아니신가요? ">
                                         <attributes>
-                                            <font key="NSFont" metaFont="system" size="15"/>
+                                            <font key="NSFont" metaFont="label" size="15"/>
                                         </attributes>
                                     </fragment>
                                     <fragment content="회원가입 하기">
@@ -140,6 +139,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BrL-am-AZO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="908" y="137.4384236453202"/>
+        </scene>
+        <!--Tab BarC-->
+        <scene sceneID="QLT-Kc-9pA">
+            <objects>
+                <tabBarController storyboardIdentifier="TabBarC" automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="bXk-31-DOA" customClass="TabBarC" customModule="SOPT26_Assignment" customModuleProvider="target" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="rTv-gI-MZK">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="daa-2k-l4E" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3076" y="137"/>
         </scene>
     </scenes>
     <resources>

@@ -21,8 +21,9 @@ class HomeVC: UIViewController {
         self.scrollView.delegate = self
         self.topViewInitialHeightConstraintConstant = self.topViewHeightConstraint.constant
         // Do any additional setup after loading the view.
+
     }
-    
+
 
     /*
     // MARK: - Navigation

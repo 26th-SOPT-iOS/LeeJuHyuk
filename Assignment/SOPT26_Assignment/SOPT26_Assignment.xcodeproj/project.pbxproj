@@ -20,6 +20,13 @@
 		7FB84954244B03A900EB5D81 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7FB84952244B03A900EB5D81 /* LaunchScreen.storyboard */; };
 		7FB8495C244B041D00EB5D81 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB8495B244B041D00EB5D81 /* LoginVC.swift */; };
 		7FB8495E244B04AD00EB5D81 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB8495D244B04AD00EB5D81 /* SignUpVC.swift */; };
+		7FEC0184246CE092007C64D2 /* Friends.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7FEC0183246CE092007C64D2 /* Friends.storyboard */; };
+		7FEC0186246CE250007C64D2 /* FriendsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FEC0185246CE250007C64D2 /* FriendsVC.swift */; };
+		7FEC0188246CE6FA007C64D2 /* TabBarC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FEC0187246CE6FA007C64D2 /* TabBarC.swift */; };
+		7FEC018B246D4246007C64D2 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FEC018A246D4246007C64D2 /* User.swift */; };
+		7FEC018D246D4252007C64D2 /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FEC018C246D4252007C64D2 /* Friend.swift */; };
+		7FEC0191246D47A8007C64D2 /* MyProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FEC0190246D47A8007C64D2 /* MyProfileCell.swift */; };
+		7FEC0193246D47C8007C64D2 /* FriendProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FEC0192246D47C8007C64D2 /* FriendProfileCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +45,13 @@
 		7FB84955244B03A900EB5D81 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7FB8495B244B041D00EB5D81 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		7FB8495D244B04AD00EB5D81 /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
+		7FEC0183246CE092007C64D2 /* Friends.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Friends.storyboard; sourceTree = "<group>"; };
+		7FEC0185246CE250007C64D2 /* FriendsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsVC.swift; sourceTree = "<group>"; };
+		7FEC0187246CE6FA007C64D2 /* TabBarC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarC.swift; sourceTree = "<group>"; };
+		7FEC018A246D4246007C64D2 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		7FEC018C246D4252007C64D2 /* Friend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Friend.swift; sourceTree = "<group>"; };
+		7FEC0190246D47A8007C64D2 /* MyProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileCell.swift; sourceTree = "<group>"; };
+		7FEC0192246D47C8007C64D2 /* FriendProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendProfileCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +77,8 @@
 		7F384775245AF89D00D43631 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				7FEC018E246D4772007C64D2 /* Cell */,
+				7FEC0189246D4235007C64D2 /* Model */,
 				7F384778245AF94700D43631 /* Extensions */,
 				7F384777245AF8D800D43631 /* VC */,
 			);
@@ -77,6 +93,7 @@
 				7FB84952244B03A900EB5D81 /* LaunchScreen.storyboard */,
 				7F38477B245B0D1800D43631 /* SignUp.storyboard */,
 				7F38477D245B227700D43631 /* Home.storyboard */,
+				7FEC0183246CE092007C64D2 /* Friends.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -88,6 +105,8 @@
 				7FB8495D244B04AD00EB5D81 /* SignUpVC.swift */,
 				7FB8495B244B041D00EB5D81 /* LoginVC.swift */,
 				7F38477F245B252800D43631 /* HomeVC.swift */,
+				7FEC0185246CE250007C64D2 /* FriendsVC.swift */,
+				7FEC0187246CE6FA007C64D2 /* TabBarC.swift */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -126,6 +145,24 @@
 				7FB84955244B03A900EB5D81 /* Info.plist */,
 			);
 			path = SOPT26_Assignment;
+			sourceTree = "<group>";
+		};
+		7FEC0189246D4235007C64D2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7FEC018A246D4246007C64D2 /* User.swift */,
+				7FEC018C246D4252007C64D2 /* Friend.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7FEC018E246D4772007C64D2 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				7FEC0190246D47A8007C64D2 /* MyProfileCell.swift */,
+				7FEC0192246D47C8007C64D2 /* FriendProfileCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -187,6 +224,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7F3847732459598600D43631 /* Login.storyboard in Resources */,
+				7FEC0184246CE092007C64D2 /* Friends.storyboard in Resources */,
 				7FB84954244B03A900EB5D81 /* LaunchScreen.storyboard in Resources */,
 				7FB84951244B03A900EB5D81 /* Assets.xcassets in Resources */,
 				7F38477E245B227700D43631 /* Home.storyboard in Resources */,
@@ -203,11 +241,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				7FB8494C244B03A800EB5D81 /* ViewController.swift in Sources */,
+				7FEC0188246CE6FA007C64D2 /* TabBarC.swift in Sources */,
 				7F384780245B252800D43631 /* HomeVC.swift in Sources */,
+				7FEC018D246D4252007C64D2 /* Friend.swift in Sources */,
 				7F38477A245AFBB900D43631 /* UIColor+Extensions.swift in Sources */,
 				7FB84948244B03A800EB5D81 /* AppDelegate.swift in Sources */,
 				7FB8495C244B041D00EB5D81 /* LoginVC.swift in Sources */,
+				7FEC0193246D47C8007C64D2 /* FriendProfileCell.swift in Sources */,
 				7FB8494A244B03A800EB5D81 /* SceneDelegate.swift in Sources */,
+				7FEC0186246CE250007C64D2 /* FriendsVC.swift in Sources */,
+				7FEC0191246D47A8007C64D2 /* MyProfileCell.swift in Sources */,
+				7FEC018B246D4246007C64D2 /* User.swift in Sources */,
 				7FB8495E244B04AD00EB5D81 /* SignUpVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

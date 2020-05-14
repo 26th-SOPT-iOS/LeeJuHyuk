@@ -62,9 +62,9 @@ class SignUpVC: UIViewController {
     }
     
     @IBAction func signUpButton(_ sender: UIButton){
-        let storyboard = UIStoryboard.init(name: "Home", bundle: nil)
+        let storyboard = UIStoryboard.init(name: "Login", bundle: nil)
         
-        if let dvc = storyboard.instantiateViewController(identifier: "HomeVC") as? HomeVC {
+        if let dvc = storyboard.instantiateViewController(identifier: "TabBarC") as? UITabBarController {
             self.present(dvc, animated: true, completion: {
                 self.navigationController?.popToRootViewController(animated: false)
             })
