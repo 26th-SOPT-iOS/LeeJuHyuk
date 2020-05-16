@@ -82,36 +82,33 @@ class SignUpVC: UIViewController {
         guard let email = emailTextField.text else { return }
         guard let phoneNumber = phoneNumberTextField.text else { return }
         
-        AuthService.shared.signUp(id: id,
-                                  pw: pw,
-                                  name: name,
-                                  email: email,
-                                  phone: phoneNumber) { result in
-                                    
-                                    switch result {
-                                    case .success(_):
-                                        self.navigationController?.popViewController(animated: true)
-                                    case .requestErr(let msg):
-                                        let alert = UIAlertController(title: "회원가입 실패",
-                                                                      message: msg as? String ?? "",
-                                                                      preferredStyle: .alert)
-                                        let action = UIAlertAction(title: "확인",
-                                                                   style: .default)
-                                        
-                                        alert.addAction(action)
-                                        self.present(alert, animated: true)
-                                    case .pathErr:
-                                        print("path err")
-                                    case .serverErr:
-                                        print("server err")
-                                    case .networkFail:
-                                        print("network err")
-                                    }
+        AuthService
+            .shared
+            .signUp(id: id,
+                    pw: pw,
+                    name: name,
+                    email: email,
+                    phone: phoneNumber) { result in
+                        
+                        switch result {
+                        case .success(_):
+                            self.navigationController?.popViewController(animated: true)
+                        case .requestErr(let msg):
+                            let alert = UIAlertController(title: "회원가입 실패",
+                                                          message: msg as? String ?? "",
+                                                          preferredStyle: .alert)
+                            let action = UIAlertAction(title: "확인",
+                                                       style: .default)
+                            
+                            alert.addAction(action)
+                            self.present(alert, animated: true)
+                        case .pathErr:
+                            print("path err")
+                        case .serverErr:
+                            print("server err")
+                        case .networkFail:
+                            print("network err")
+                        }
         }
-        
-        
-
     }
-    
-    
 }

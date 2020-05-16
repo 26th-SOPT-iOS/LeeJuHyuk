@@ -18,3 +18,8 @@
 
 ## 3차 과제
 - [3차과제 - 친구 리스트](https://github.com/26th-SOPT-iOS/LeeJuHyuk/blob/master/markdown/3nd-assignment-Friend_List.md)
+
+
+## 4차 과재
+-[4차과제 - 회원가입 & 자동로그인](https://github.com/26th-SOPT-iOS/LeeJuHyuk/blob/master/markdown/4th-assginment_SignUp-and-autologin.md)
+

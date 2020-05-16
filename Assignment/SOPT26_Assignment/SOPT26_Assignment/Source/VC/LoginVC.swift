@@ -69,11 +69,11 @@ class LoginVC: UIViewController {
     }
     
     func autoLoginCheck(){
-        let storyboard = UIStoryboard.init(name: "Login", bundle: nil)
+        //let storyboard = UIStoryboard.init(name: "Login", bundle: nil)
         
         if UserDefaults.standard.bool(forKey: UserDefaultKeys.autoLoginCheck) {
             print("auto login checked")
-            if let dvc = storyboard.instantiateViewController(identifier: "TabBarC") as? TabBarC {
+            if let dvc = self.storyboard?.instantiateViewController(identifier: "TabBarC") as? TabBarC {
                 self.present(dvc, animated: true, completion: nil)
             }
         }
