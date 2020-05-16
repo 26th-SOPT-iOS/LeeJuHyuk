@@ -24,7 +24,11 @@ class HomeVC: UIViewController {
 
     }
 
-
+    @IBAction func touchUpLogoutButton(_ sender: Any) {
+        UserDefaults.standard.set(false, forKey: UserDefaultKeys.autoLoginCheck)
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     /*
     // MARK: - Navigation
 

@@ -41,7 +41,7 @@ class TabBarC: UITabBarController {
         
         
         // Create an Array of Tables with Tabs as Elements.
-        let tabs =  [firstTab, secondTab]
+        let tabs =  [secondTab, firstTab]
         // Set the ViewController.
         self.setViewControllers(tabs, animated: false)
         // Do any additional setup after loading the view.

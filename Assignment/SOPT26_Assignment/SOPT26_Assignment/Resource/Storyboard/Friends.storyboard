@@ -119,6 +119,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aP7-x0-6LE">
                                         <rect key="frame" x="378" y="60" width="20" height="22"/>
                                         <state key="normal" image="settingIc"/>
+                                        <connections>
+                                            <action selector="touchUpSettingButton:" destination="rjV-cm-5wC" eventType="touchUpInside" id="e0L-P2-H6p"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>

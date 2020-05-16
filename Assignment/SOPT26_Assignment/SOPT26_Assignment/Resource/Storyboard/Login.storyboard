@@ -30,7 +30,7 @@
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="이메일" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Qno-z3-XqS">
                                                 <rect key="frame" x="18" y="0.0" width="281" height="44"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" smartInsertDeleteType="no"/>
                                             </textField>
                                         </subviews>
                                         <constraints>
@@ -46,7 +46,7 @@
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="비밀번호" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="v06-kc-Swr">
                                                 <rect key="frame" x="18" y="0.0" width="281" height="44"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" secureTextEntry="YES" smartInsertDeleteType="no" textContentType="password"/>
                                             </textField>
                                         </subviews>
                                         <constraints>
@@ -79,7 +79,7 @@
                                 <attributedString key="attributedText">
                                     <fragment content="아직 회원이 아니신가요? ">
                                         <attributes>
-                                            <font key="NSFont" metaFont="label" size="15"/>
+                                            <font key="NSFont" metaFont="system" size="15"/>
                                         </attributes>
                                     </fragment>
                                     <fragment content="회원가입 하기">
@@ -92,6 +92,18 @@
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sNH-OP-gOy">
+                                <rect key="frame" x="38.000000000000007" y="397" width="88.666666666666686" height="19"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title=" 자동 로그인" image="circle" catalog="system">
+                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <state key="selected" image="checkmark.circle.fill" catalog="system"/>
+                                <connections>
+                                    <action selector="touchUpAutoLoginCheckedButton:" destination="ONX-fB-bnJ" eventType="touchUpInside" id="9XV-WZ-qcX"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -104,13 +116,16 @@
                             <constraint firstItem="N1h-Oi-guF" firstAttribute="top" secondItem="eAE-hJ-cW4" secondAttribute="top" constant="106" id="SFb-sv-cb4"/>
                             <constraint firstItem="eAE-hJ-cW4" firstAttribute="trailing" secondItem="N1h-Oi-guF" secondAttribute="trailing" constant="86" id="V8J-yv-CM8"/>
                             <constraint firstItem="N1h-Oi-guF" firstAttribute="leading" secondItem="eAE-hJ-cW4" secondAttribute="leading" constant="86" id="biR-5V-mN6"/>
+                            <constraint firstItem="sNH-OP-gOy" firstAttribute="leading" secondItem="zJJ-gJ-zGP" secondAttribute="leading" id="eSu-Dj-1iL"/>
                             <constraint firstItem="eAE-hJ-cW4" firstAttribute="trailing" secondItem="44p-6u-0YJ" secondAttribute="trailing" constant="38" id="fq7-zt-Kzu"/>
+                            <constraint firstItem="sNH-OP-gOy" firstAttribute="top" secondItem="zJJ-gJ-zGP" secondAttribute="bottom" constant="15" id="mwH-eW-A9I"/>
                             <constraint firstItem="SXz-f7-8lm" firstAttribute="top" secondItem="XK8-zg-CFH" secondAttribute="bottom" constant="17" id="rop-la-1x7"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="eAE-hJ-cW4"/>
                     </view>
                     <navigationItem key="navigationItem" id="GRK-kI-vTu"/>
                     <connections>
+                        <outlet property="autoLoginCheckedButton" destination="sNH-OP-gOy" id="AuR-66-Ibm"/>
                         <outlet property="emailBackground" destination="xSk-ka-XBQ" id="DDQ-IV-hbL"/>
                         <outlet property="inputEmailTextField" destination="Qno-z3-XqS" id="Hag-em-Z8v"/>
                         <outlet property="inputPWTextField" destination="v06-kc-Swr" id="z0y-bv-Lf4"/>
@@ -126,7 +141,7 @@
         <!--Navigation Controller-->
         <scene sceneID="hfL-9O-wzD">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="gS3-xv-bYb" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="LoginNavi" automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="gS3-xv-bYb" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="liW-6d-871">
                         <autoresizingMask key="autoresizingMask"/>
@@ -146,6 +161,7 @@
                 <tabBarController storyboardIdentifier="TabBarC" automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="bXk-31-DOA" customClass="TabBarC" customModule="SOPT26_Assignment" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="rTv-gI-MZK">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -157,6 +173,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="checkmark.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="circle" catalog="system" width="128" height="121"/>
         <image name="soptlogo" width="5906" height="5906"/>
     </resources>
 </document>

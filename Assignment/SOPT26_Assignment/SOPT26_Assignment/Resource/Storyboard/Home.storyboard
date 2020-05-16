@@ -367,14 +367,26 @@
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="oursoptBgImg" translatesAutoresizingMaskIntoConstraints="NO" id="kaA-in-NrV">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="210"/>
                                     </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mb2-fU-GQj">
+                                        <rect key="frame" x="303" y="22" width="52" height="30"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal" title="Logout">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="touchUpLogoutButton:" destination="myO-XN-qUH" eventType="touchUpInside" id="z6w-Yt-h7G"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemGray2Color" red="0.68235294120000001" green="0.68235294120000001" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="kaA-in-NrV" secondAttribute="bottom" id="1u9-fT-9mF"/>
+                                    <constraint firstItem="Mb2-fU-GQj" firstAttribute="trailing" secondItem="kaA-in-NrV" secondAttribute="trailing" constant="-20" id="Bc0-H4-iuG"/>
                                     <constraint firstItem="kaA-in-NrV" firstAttribute="top" secondItem="RIq-E7-Jhg" secondAttribute="top" id="Ial-aX-Ww2"/>
                                     <constraint firstAttribute="height" constant="210" id="THv-Ho-OCA"/>
                                     <constraint firstAttribute="trailing" secondItem="kaA-in-NrV" secondAttribute="trailing" id="Y2f-bD-4cr"/>
                                     <constraint firstItem="kaA-in-NrV" firstAttribute="leading" secondItem="RIq-E7-Jhg" secondAttribute="leading" id="hLT-MI-dDe"/>
+                                    <constraint firstItem="Mb2-fU-GQj" firstAttribute="top" secondItem="RIq-E7-Jhg" secondAttribute="top" constant="22" id="ueI-3Z-zPP"/>
                                 </constraints>
                             </view>
                         </subviews>

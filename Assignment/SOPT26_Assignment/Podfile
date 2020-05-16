@@ -1,0 +1,13 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'SOPT26_Assignment' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for SOPT26_Assignment
+
+pod 'Alamofire', '~> 4.8.2'
+pod 'Kingfisher', '~> 5.0'
+
+end

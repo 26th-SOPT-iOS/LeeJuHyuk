@@ -43,6 +43,24 @@ class FriendsVC: UIViewController {
         friendsList.append(Friend(name: "CareDirection", profileImageName: "profile2Img", stateMessage: "Coming soon.."))
 
     }
+    
+    // MARK:- IBAction
+    
+    @IBAction func touchUpSettingButton(_ sendenr: UIButton){
+        let actionSheet = UIAlertController(title: nil, message: "설정", preferredStyle: .actionSheet)
+        
+        let manageFriendAction = UIAlertAction(title: "친구 관리", style: .default)
+        let totalSettingAction = UIAlertAction(title: "전체 설정", style: .default)
+        let cancelAction = UIAlertAction(title: "취소", style: .cancel)
+        
+        
+        actionSheet.addAction(manageFriendAction)
+        actionSheet.addAction(totalSettingAction)
+        actionSheet.addAction(cancelAction)
+        
+        actionSheet.view.addSubview(UIView())
+        self.present(actionSheet, animated: true, completion: nil)
+    }
 
 }
 // MARK:- UITableViewDataSource
@@ -142,6 +160,8 @@ extension FriendsVC: UITableViewDataSource {
             return UISwipeActionsConfiguration()
         }
     }
+    
+    
 //    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
 //        return true
 //    }
